@@ -13,6 +13,12 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
     <AssemblyName>Paster</AssemblyName>
+    <Version>1.0.0</Version>
+    <Product>Paster</Product>
+    <Authors>Hoang Cong Tue</Authors>
+    <Company>Hoang Cong Tue</Company>
+    <Description>A Win+Alt+V popup for pasting predefined text snippets.</Description>
+    <Copyright>Copyright (c) 2026 Hoang Cong Tue</Copyright>
     <RootNamespace>Paster</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>paster.ico</ApplicationIcon>
