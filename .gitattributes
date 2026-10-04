@@ -1,0 +1,7 @@
+# Normalise to LF in the repository; check out native on Windows.
+* text=auto
+
+# Batch files must keep CRLF or cmd.exe can mis-parse them.
+*.cmd text eol=crlf
+
+*.ico binary

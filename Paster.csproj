@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <UseWPF>true</UseWPF>
+    <!-- WinForms is enabled solely for NotifyIcon (WPF has no tray icon type). -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <!-- Disabled on purpose: WPF and WinForms implicit usings collide on
+         Application, Clipboard, MessageBox, Point, Size, Color, Brushes. -->
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>Paster</AssemblyName>
+    <RootNamespace>Paster</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>paster.ico</ApplicationIcon>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <DebugType>embedded</DebugType>
+    <!-- WFAC010 tells WinForms apps to set DPI via ApplicationHighDpiMode, which
+         drives Application.SetHighDpiMode - a call this app never makes, since
+         WinForms is here only for NotifyIcon. For WPF the manifest IS the
+         mechanism, so the manifest stays and the advice does not apply. -->
+    <NoWarn>$(NoWarn);WFAC010</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Also a WPF resource, so the tray and the manager window can draw the
+         real icon rather than each inventing their own. -->
+    <Resource Include="paster.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- tools/ holds the icon generator, a separate console project. Default
+         globbing would otherwise compile its Main into the app. -->
+    <Compile Remove="tools/**" />
+    <None Remove="tools/**" />
+    <Page Remove="tools/**" />
+  </ItemGroup>
+
+</Project>

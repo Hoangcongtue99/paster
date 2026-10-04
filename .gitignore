@@ -1,0 +1,15 @@
+# build output
+bin/
+obj/
+dist/
+
+# the user's own snippets - the app writes a fresh one on first run
+snippets.txt
+
+# IDE / tooling
+.vs/
+*.user
+*.suo
+
+# runtime diagnostics
+paster.log
