@@ -74,13 +74,25 @@ folder you can write to, and run it. It creates `snippets.txt` beside itself on
 first run. No installer, no .NET to install, nothing in the registry unless you
 tick **Start with Windows**.
 
-Two things to expect:
+Three things to expect:
 
 - **SmartScreen will warn you.** The exe isn't code-signed, so the first run
   gives *"Windows protected your PC"* → **More info** → **Run anyway**. If you
   downloaded a zip, right-click it → **Properties** → **Unblock** before
   extracting.
+- **Smart App Control will block it outright, if it's on.** Unlike SmartScreen
+  there's no *Run anyway* and no per-app exception, and unblocking the file
+  doesn't help — it checks every launch, even of an exe you built yourself.
+  The only way to run Paster is to switch it off: **Windows Security** →
+  **App & browser control** → **Smart App Control settings** → **Off**. On many
+  Windows 11 builds that can't be undone without resetting Windows, so decide
+  with that in mind. Most PCs upgraded from Windows 10 never had it on. See
+  Microsoft's [Smart App Control FAQ](https://support.microsoft.com/en-us/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions).
 - **Nothing visible happens on launch.** It's a tray app. Look for the icon.
+
+The exe stays unsigned on purpose. Smart App Control only accepts a certificate
+from a Microsoft-trusted authority, which is a recurring paid subscription — not
+worth it for a free tool. Building from source doesn't get around it either.
 
 Put it somewhere writable — `Desktop`, `Documents`, a USB stick. Dropped into
 `Program Files` it silently falls back to `%APPDATA%\Paster\`, which breaks the
