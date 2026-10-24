@@ -13,7 +13,7 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
     <AssemblyName>Paster</AssemblyName>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Product>Paster</Product>
     <Authors>Hoang Cong Tue</Authors>
     <Company>Hoang Cong Tue</Company>
