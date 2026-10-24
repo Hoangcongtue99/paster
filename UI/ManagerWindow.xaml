@@ -5,7 +5,7 @@
         Title="Paster — snippets" Width="940" Height="620"
         MinWidth="680" MinHeight="420"
         Background="{StaticResource Bg}" FontFamily="Segoe UI" FontSize="13"
-        WindowStartupLocation="CenterScreen" Icon="paster.ico">
+        WindowStartupLocation="CenterScreen" Icon="/paster.ico">
 
     <Window.Resources>
         <ui:IndexKeyConverter x:Key="IndexKey" />
